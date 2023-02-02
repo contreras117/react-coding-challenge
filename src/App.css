@@ -1,0 +1,9 @@
+body{
+    margin: 0;
+    padding: 0;
+    color: #404040;
+    font-family: Knowledge2017, Helvetica Neue, Arial, sans-serif !important;
+    font-size: 1rem;
+    line-height: 1.5;
+    min-height: 100vh;
+}

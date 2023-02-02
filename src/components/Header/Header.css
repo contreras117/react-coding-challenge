@@ -1,0 +1,14 @@
+.header{
+    align-items: center;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-top: .25rem solid #fa6400;
+    border-bottom: .0625rem solid #d0d0d0;
+}
+
+.header__nav ul{
+    list-style: none;
+    display: flex;
+}
