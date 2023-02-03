@@ -1,9 +1,14 @@
-body{
+html, body{
     margin: 0;
     padding: 0;
     color: #404040;
     font-family: Knowledge2017, Helvetica Neue, Arial, sans-serif !important;
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 1.5;
+}
+
+#root{
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
