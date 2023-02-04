@@ -6,20 +6,23 @@ import {
   ChevronUpSmallIcon,
 } from '@fluentui/react-icons-mdl2';
 import SubMenu from './SubMenu';
+import { useLocation } from 'react-router-dom';
 
 const NavItem = ({ text, targetId, subMenu }) => {
   const [isCalloutVisible, { toggle: toggleIsCalloutVisible }] =
     useBoolean(false);
-  const buttonId = useId('menu-item');
+  const menuId = useId('menu-item');
+
+  const { state } = useLocation();
 
   return (
     <>
       <button
         type='button'
-        id={buttonId}
+        id={menuId}
         onClick={toggleIsCalloutVisible}
         className={styles.button}
-        data-clicked={isCalloutVisible}
+        data-clicked={isCalloutVisible || state?.selectedMenu === text}
       >
         <span className={styles.span}>{text}</span>
         {isCalloutVisible ? (
@@ -37,7 +40,7 @@ const NavItem = ({ text, targetId, subMenu }) => {
           isBeakVisible={false}
         >
           <DelayedRender>
-            <SubMenu sections={subMenu} />
+            <SubMenu menu={text} sections={subMenu} />
           </DelayedRender>
         </Callout>
       )}

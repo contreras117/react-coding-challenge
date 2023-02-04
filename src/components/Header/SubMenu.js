@@ -1,20 +1,25 @@
 import React from 'react';
 import { mergeStyleSets } from '@fluentui/react';
+import { Link } from 'react-router-dom';
 
-const SubMenu = ({ sections }) => {
+const SubMenu = ({ menu, sections }) => {
   return (
     <div className={styles.container}>
       {sections.map((section) => (
-        <div className={styles.section}>
+        <div key={section.title} className={styles.section}>
           <h3 className={styles.h3}>{section.title}</h3>
           <div>
             <ul className={styles.ul}>
               {section.items.map((item) => (
-                <li className={styles.li}>
-                  <a className={styles.a} href={item.url}>
+                <li key={item.name} className={styles.li}>
+                  <Link
+                    className={styles.a}
+                    to={item.url}
+                    state={{ selectedMenu: menu }}
+                  >
                     <h4 className={styles.h4}>{item.name}</h4>
                     <p className={styles.p}>{item.description}</p>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

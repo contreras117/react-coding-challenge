@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { mergeStyleSets } from '@fluentui/react';
 import { useId } from '@fluentui/react-hooks';
 
@@ -101,9 +102,9 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        <a href='/'>
+        <Link to='/' state={{ selectedMenu: '' }}>
           <img src={logo} alt='Thomson Reuters logo' />
-        </a>
+        </Link>
         <ul className={styles.ul}>
           <li>
             <NavItem

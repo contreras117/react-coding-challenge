@@ -59,7 +59,7 @@ const Home = () => {
         </h2>
         <div className={styles.grid}>
           {Products.map((product) => (
-            <ProductCard {...product} />
+            <ProductCard key={product.name} {...product} />
           ))}
         </div>
       </div>

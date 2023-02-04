@@ -1,14 +1,15 @@
-import { mergeStyleSets } from '@fluentui/react';
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { mergeStyleSets } from '@fluentui/react';
 
 import logo from '../../assets/whiteLogo.png';
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <a href='/'>
+    <footer className={styles.footer} state={{ selectedMenu: '' }}>
+      <Link to='/'>
         <img src={logo} alt='Thomson Reuters logo' />
-      </a>
+      </Link>
     </footer>
   );
 };

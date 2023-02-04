@@ -1,17 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ForwardIcon } from '@fluentui/react-icons-mdl2';
 import { mergeStyleSets } from '@fluentui/react';
 
 const ProductCard = ({ category, name, description, url }) => {
   return (
-    <a href={url} className={styles.card}>
+    <Link to={url} className={styles.card} state={{ selectedMenu: '' }}>
       <h4 className={styles.category}>{category}</h4>
       <h3 className={styles.name}>{name}</h3>
       <p className={styles.description}>{description}</p>
       <p className={styles.details}>
         See Details <ForwardIcon className={styles.icon} />
       </p>
-    </a>
+    </Link>
   );
 };
 
