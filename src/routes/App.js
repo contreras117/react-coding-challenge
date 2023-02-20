@@ -10,6 +10,10 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
+    path: '/react-coding-challenge',
+    element: <Home />,
+  },
+  {
     path: '/reuters-connect',
     element: <EmptyPage title='Reuters Connect' />,
   },
